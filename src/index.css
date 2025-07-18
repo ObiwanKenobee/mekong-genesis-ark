@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Ark Horizon Design System - Where Ancient Wisdom Meets Future Tech */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core spiritual-tech palette */
+    --background: 220 30% 8%;
+    --foreground: 40 80% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 25% 12%;
+    --card-foreground: 40 80% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 40 80% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Mekong River blues with golden light */
+    --primary: 190 85% 45%;
+    --primary-foreground: 40 90% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 260 35% 25%;
+    --secondary-foreground: 40 80% 92%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 40 30% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Sacred temple gold */
+    --accent: 40 85% 65%;
+    --accent-foreground: 220 30% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 40 90% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 40 85% 65%;
 
-    --radius: 0.5rem;
+    /* Mystical gradients */
+    --gradient-river: linear-gradient(135deg, hsl(190 85% 45%) 0%, hsl(220 70% 35%) 100%);
+    --gradient-sunrise: linear-gradient(135deg, hsl(25 95% 70%) 0%, hsl(40 85% 65%) 50%, hsl(55 80% 75%) 100%);
+    --gradient-mystical: linear-gradient(135deg, hsl(260 60% 30%) 0%, hsl(190 85% 45%) 100%);
+    --gradient-sacred: linear-gradient(180deg, hsl(220 30% 8%) 0%, hsl(220 25% 12%) 100%);
+
+    /* Sacred geometry shadows */
+    --shadow-temple: 0 20px 60px -10px hsl(40 85% 65% / 0.3);
+    --shadow-mystical: 0 10px 40px -5px hsl(190 85% 45% / 0.4);
+    --shadow-inner: inset 0 2px 8px hsl(220 30% 5% / 0.6);
+
+    /* Flow animations */
+    --transition-flow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-sacred: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -102,4 +118,54 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer components {
+  /* Sacred button variants */
+  .btn-sacred {
+    @apply bg-gradient-to-r from-accent to-primary text-accent-foreground font-medium px-8 py-4 rounded-lg shadow-[var(--shadow-temple)] hover:shadow-[var(--shadow-mystical)] transition-[var(--transition-sacred)] hover:scale-105;
+  }
+  
+  .btn-mystical {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground border border-primary/30 px-6 py-3 rounded-lg hover:border-accent/50 transition-[var(--transition-flow)] hover:shadow-[var(--shadow-mystical)];
+  }
+
+  /* Flowing text animations */
+  .text-flow {
+    @apply bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent bg-[length:200%_auto] animate-[flow_3s_ease-in-out_infinite];
+  }
+
+  /* Sacred containers */
+  .container-sacred {
+    @apply bg-gradient-to-b from-card to-background border border-border/50 rounded-xl shadow-[var(--shadow-inner)] backdrop-blur-sm;
+  }
+
+  /* River flow patterns */
+  .pattern-river {
+    background-image: radial-gradient(circle at 2px 2px, hsl(var(--primary) / 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  /* Custom keyframes */
+  @keyframes flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse-sacred {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--accent) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--accent) / 0.6), 0 0 60px hsl(var(--primary) / 0.3); }
+  }
+
+  /* Utility classes */
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .animate-pulse-sacred { animation: pulse-sacred 4s ease-in-out infinite; }
+  .animate-flow { animation: flow 3s ease-in-out infinite; }
 }

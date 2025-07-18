@@ -63,6 +63,21 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'gradient-river': 'var(--gradient-river)',
+				'gradient-sunrise': 'var(--gradient-sunrise)',
+				'gradient-mystical': 'var(--gradient-mystical)',
+				'gradient-sacred': 'var(--gradient-sacred)',
+			},
+			boxShadow: {
+				'temple': 'var(--shadow-temple)',
+				'mystical': 'var(--shadow-mystical)',
+				'inner': 'var(--shadow-inner)',
+			},
+			transitionTimingFunction: {
+				'flow': 'cubic-bezier(0.4, 0, 0.2, 1)',
+				'sacred': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
